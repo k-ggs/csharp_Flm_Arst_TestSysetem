@@ -1,0 +1,339 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      
+
+     
+  
+       x:Name="window" x:Class="Flm_Arst_TestSysetem.MainWindow"
+        mc:Ignorable="d"
+        WindowStyle="None" Height="950" Width="1500" BorderBrush="Black" FontWeight="ExtraLight" BorderThickness="5" WindowStartupLocation="CenterScreen" WindowState="Normal"    Loaded="window_Loaded">
+    <!--<Window.Resources>
+    <ResourceDictionary>
+        <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="main_style.xaml"></ResourceDictionary>
+        </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+    </Window.Resources>-->
+    <DockPanel>
+
+        <Border Visibility="Collapsed" DockPanel.Dock="Top" Height="50" Background="{DynamicResource Button.Disabled.Background}" MouseMove="Border_MouseMove">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.9*"/>
+                    <ColumnDefinition Width="0.03*"/>
+                    <ColumnDefinition Width="0.03*"/>
+                    <ColumnDefinition Width="0.03*"/>
+                </Grid.ColumnDefinitions>
+                <!--<Image HorizontalAlignment="Left" Source="Su-27KI Flanker.ico"/>-->
+                <TextBlock Margin="0,0,50,0"  FontSize="45" Text="&#xe764;" Foreground="Red" FontFamily="pack://application:,,,/Resources/#iconfont" ></TextBlock>
+                <TextBlock  Margin="60,0,0,0" Grid.Column="0" FontSize="30" FontWeight="Bold" Text="阻火器试验控制采集系统" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Left" Height="40" Foreground="#FF3D2D24" RenderTransformOrigin="0.5,0.5" FontStyle="Italic" FontFamily="iconfont"  />
+                <Button  FontSize="30" Grid.Column="1" Content="&#xE6C6;" Style="{StaticResource Model_BT_Close}" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0"  Foreground="#FFE0D8D8" Click="Button_Click_1" />
+                <Button  x:Name="max_bt" FontSize="30"  Grid.Column="2" Content="&#xE6BB;" Style="{StaticResource Model_BT_Max}" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0"  Foreground="#FFE0D8D8" Click="Button_Click_2" />
+                <Button  FontSize="30"  Grid.Column="3" Content="&#xE633;" Style="{StaticResource Model_BT_Close}" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Click="Button_Click" Foreground="#FFE0D8D8" />
+            </Grid>
+        </Border>
+
+        <Grid DockPanel.Dock="Top"   MouseMove="Window_MouseMove">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFD6C9D0" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <!--<Border  Width="55" Height="50" Margin="10,0,20,0" HorizontalAlignment="Left">
+                <Border.Background>
+                    
+                    <ImageBrush />
+                </Border.Background>
+            </Border>-->
+            <TextBlock  Margin="10,0,0,0"  FontSize="55" Text="&#xe764;" Foreground="Red" FontFamily="pack://application:,,,/Resources/#iconfont" ></TextBlock>
+            <StackPanel VerticalAlignment="Center">
+
+                <TextBlock Text="阻火器试验控制采集系统" Foreground="White" FontSize="25" Margin="85,0,0,0"/>
+                <Border Height="45" Background="Transparent" BorderBrush="#FF6800" BorderThickness="0,0,0,1"
+                        Margin="0,0">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="70,0,0,0">
+                        <RadioButton  x:Name="r1" Content="系统监控" Tag="&#xe778;" Style="{StaticResource NavTabButtonStyle}" IsChecked="False"
+                                     Checked="sys_checked" />
+                        <!--<RadioButton Content="实时曲线" Tag="&#xe604;" Style="{StaticResource NavTabButtonStyle}"/>-->
+                        <RadioButton  x:Name="r2" Content="历史曲线" Tag="&#xe771;" Style="{StaticResource NavTabButtonStyle}" Click="histor_checked"/>
+                        <!--<RadioButton Content="控制策略" Tag="&#xe684;" Style="{StaticResource NavTabButtonStyle}"/>-->
+                        <!--<RadioButton Content="系统操作" Tag="&#xe600;" Style="{StaticResource NavTabButtonStyle}"/>-->
+                       
+                        <RadioButton  x:Name="r3" Content="报表管理" Tag="&#xe772;" Style="{StaticResource NavTabButtonStyle}" Click="report_checked"
+                                      
+                                    />
+                        <RadioButton Content="系统设置" Tag="&#xe76d;" Style="{StaticResource NavTabButtonStyle}" Click="config_bt" />
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!--窗口控制按钮-->
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right">
+                <Button Content="&#xE6C6;" Style="{StaticResource IconButtonStyle}" FontSize="24" Click="Bt_min" />
+                <Button Content="&#xE6BB;" Style="{StaticResource IconButtonStyle}" FontSize="20" Click="Bt_max"/>
+                <Button Content="&#xE633;" Style="{StaticResource IconButtonStyle}" FontSize="20" Click="Bt_close"/>
+            </StackPanel>
+
+            <!--<StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                        Margin="20,15">
+                <TextBlock Text="Jovan.Zhaoxi" Foreground="White" VerticalAlignment="Center" Margin="10,0"/>
+                <Border Width="30" Height="30" CornerRadius="15" BorderThickness="1" BorderBrush="White">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="5" ShadowDepth="0" Direction="0" Opacity="0.4" Color="White"/>
+                    </Border.Effect>
+                    <Border.Background>
+                        <ImageBrush />
+                    </Border.Background>
+                </Border>
+            </StackPanel>-->
+        </Grid>
+
+
+        <Grid x:Name="Grid_mian"  Margin="5">
+
+
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="0"/>
+                <RowDefinition Height="0"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="37*"/>
+                <ColumnDefinition Width="331*"/>
+
+            </Grid.ColumnDefinitions>
+            <!-- <Popup Grid.Column="0" Grid.Row="1" x:Name="popup_menu"  IsOpen="{ Binding open,Mode=TwoWay }" Placement="Center"   >
+            </Popup>
+-->
+            <Border Grid.Column="0" Grid.Row="1" Grid.RowSpan="2"   CornerRadius="10" Margin="3,10,145,-10"   BorderBrush="Black" BorderThickness="3" Grid.ColumnSpan="2">
+                <Frame   x:Name="Frame_chosepage" Visibility="{Binding Visibility, Mode=OneWay}" NavigationUIVisibility="Hidden"   />
+            </Border>
+
+
+
+
+            <Border  x:Name="border_camera" Margin="3,10,145,3" Grid.Row="0" Grid.Column="0" CornerRadius="10"  BorderBrush="Black" Grid.ColumnSpan="2" >
+                <Grid   >
+
+                    <Grid>
+                        <Frame x:Name="Frame_"  NavigationUIVisibility="Hidden"   />
+
+                        <ToggleButton Visibility="Collapsed" x:Name="toggle_open"  IsChecked="{Binding open, Mode=TwoWay}" VerticalAlignment="Bottom"   HorizontalAlignment="Center"   Width="150"  Style="{DynamicResource ToggleButtonStyle2}" />
+
+                    </Grid>
+
+
+
+                </Grid>
+            </Border>
+
+
+            <Border x:Name="Bord_motion" Grid.Row="0" Grid.Column="1"   CornerRadius="5" Margin="5" Grid.ColumnSpan="2"  >
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FFD6C9D0" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Frame   x:Name="Fram_carmotion" NavigationUIVisibility="Hidden"/>
+
+            </Border>
+
+
+            <Border x:Name="Bord_motion2" Grid.Row="0" Grid.Column="1"   CornerRadius="5" Margin="5" Grid.ColumnSpan="2"  >
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FFD6C9D0" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Frame   x:Name="Fram_carmotion2" NavigationUIVisibility="Hidden"/>
+
+            </Border>
+
+            <Border x:Name="Bord_motion3" Grid.Row="0" Grid.Column="1"   CornerRadius="5" Margin="5" Grid.ColumnSpan="2"  >
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FFD6C9D0" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Frame   x:Name="Fram_carmotion3" NavigationUIVisibility="Hidden"/>
+
+            </Border>
+
+            <Border x:Name="Bord_motion4" Grid.Row="0" Grid.Column="1"   CornerRadius="5" Margin="5" Grid.ColumnSpan="2"  >
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FFD6C9D0" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Frame   x:Name="Fram_carmotion4" NavigationUIVisibility="Hidden"/>
+
+            </Border>
+
+            <Border x:Name="Bord_iniParm" Grid.Row="1" Grid.Column="1"   CornerRadius="10" Margin="3,10,3,-10"   BorderBrush="Black" BorderThickness="3" Grid.ColumnSpan="2" Grid.RowSpan="2">
+
+                <Frame x:Name="Fram_iniParm"/>
+
+            </Border >
+            <Border x:Name="Bord_msg"  Grid.Row="2" Grid.ColumnSpan="3" BorderBrush="#FFD8C2C2" BorderThickness="3">
+                <Grid>
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel  Grid.Column="0" Orientation="Horizontal">
+                        <TextBlock>Message</TextBlock>
+                        <TextBlock x:Name="Msg" Text="{Binding msg}">
+                            <TextBlock.Style>
+                                <Style x:Name="Msg_sty"  TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding flag}" Value="0">
+                                            <!--<Setter Property="Background" Value="Red" ></Setter>-->
+                                            <Setter Property="Foreground" Value="Red"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding flag}" Value="1">
+                                            <!--<Setter Property="Background" Value="#FFF5F5F5"></Setter>-->
+                                            <Setter Property="Foreground" Value="Black"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding flag}" Value="2">
+                                            <!--<Setter Property="Background" Value="Yellow"></Setter>-->
+                                            <Setter Property="Foreground" Value="Yellow"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </StackPanel>
+                    <StackPanel  Grid.Column="1" Orientation="Horizontal">
+                        <TextBlock>SERIAPPORT#</TextBlock>
+                        <TextBlock x:Name="TXT_serialport" Text="{Binding VS_Con}">
+                            <TextBlock.Style>
+                                <Style   TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding  TCPVS_flag}" Value="0">
+                                            <!--<Setter Property="Background" Value="Red" ></Setter>-->
+                                            <Setter Property="Text" Value="未连接"/>
+                                            <Setter Property="Foreground" Value="Red"/>
+
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding TCPVS_flag}" Value="1">
+                                            <!--<Setter Property="Background" Value="#FFF5F5F5"></Setter>-->
+                                            <Setter Property="Text" Value="已连接"/>
+                                            <Setter Property="Foreground" Value="Green"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding TCPVS_flag}" Value="2">
+                                            <!--<Setter Property="Background" Value="Yellow"></Setter>-->
+                                            <Setter Property="Text" Value="连接中"/>
+                                            <Setter Property="Foreground" Value="Yellow"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </StackPanel>
+
+                    <StackPanel  Grid.Column="2" Orientation="Horizontal">
+                        <TextBlock>TCP#INFRARED</TextBlock>
+                        <TextBlock x:Name="TXT_TCPRED" Text="{Binding TCPVS_Con}">
+                            <TextBlock.Style>
+                                <Style   TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding TCPVS_flag}" Value="0">
+                                            <!--<Setter Property="Background" Value="Red" ></Setter>-->
+                                            <Setter Property="Text" Value="未连接"/>
+                                            <Setter Property="Foreground" Value="Red"/>
+
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding TCPVS_flag}" Value="1">
+                                            <!--<Setter Property="Background" Value="#FFF5F5F5"></Setter>-->
+                                            <Setter Property="Text" Value="已连接"/>
+                                            <Setter Property="Foreground" Value="Green"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding TCPVS_flag}" Value="2">
+                                            <!--<Setter Property="Background" Value="Yellow"></Setter>-->
+                                            <Setter Property="Text" Value="连接中"/>
+                                            <Setter Property="Foreground" Value="Yellow"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </StackPanel>
+                    <StackPanel  Grid.Column="3" Orientation="Horizontal">
+                        <TextBlock>TCP#VS</TextBlock>
+                        <TextBlock x:Name="TXT_TCPVS" Text="{Binding TCPVS_Con}">
+                            <TextBlock.Style>
+                                <Style   TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding TCPVS_flag}" Value="0">
+                                            <!--<Setter Property="Background" Value="Red" ></Setter>-->
+                                            <Setter Property="Text" Value="未连接"/>
+                                            <Setter Property="Foreground" Value="Red"/>
+
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding TCPVS_flag}" Value="1">
+                                            <!--<Setter Property="Background" Value="#FFF5F5F5"></Setter>-->
+                                            <Setter Property="Text" Value="已连接"/>
+                                            <Setter Property="Foreground" Value="Green"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding TCPVS_flag}" Value="2">
+                                            <!--<Setter Property="Background" Value="Yellow"></Setter>-->
+                                            <Setter Property="Text" Value="连接中"/>
+                                            <Setter Property="Foreground" Value="Yellow"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </StackPanel>
+
+
+                    <StackPanel  Grid.Column="4" Orientation="Horizontal">
+                        <TextBlock>TCP#PLZ</TextBlock>
+                        <TextBlock x:Name="TXT_TCPPLZ" Text="{Binding TCPVS_Con}">
+                            <TextBlock.Style>
+                                <Style   TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding TCPVS_flag}" Value="0">
+                                            <!--<Setter Property="Background" Value="Red" ></Setter>-->
+                                            <Setter Property="Text" Value="未连接"/>
+                                            <Setter Property="Foreground" Value="Red"/>
+
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding TCPVS_flag}" Value="1">
+                                            <!--<Setter Property="Background" Value="#FFF5F5F5"></Setter>-->
+                                            <Setter Property="Text" Value="已连接"/>
+                                            <Setter Property="Foreground" Value="Green"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding TCPVS_flag}" Value="2">
+                                            <!--<Setter Property="Background" Value="Yellow"></Setter>-->
+                                            <Setter Property="Text" Value="连接中"/>
+                                            <Setter Property="Foreground" Value="Yellow"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+
+
+
+    </DockPanel>
+
+</Window>

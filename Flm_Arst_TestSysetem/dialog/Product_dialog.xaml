@@ -1,0 +1,110 @@
+﻿<Window x:Class="Flm_Arst_TestSysetem.dialog.Product_dialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Flm_Arst_TestSysetem.dialog"
+        mc:Ignorable="d"
+        Title="Product_dialog" Height="450"    WindowStyle="None" Width="400" Background="Black" Loaded="Window_Loaded">
+    <Grid>
+        <GroupBox Foreground="White" Margin="20" Grid.Row="1" Grid.Column="2" Header="阻火器参数" >
+            <StackPanel >
+                
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                    <TextBlock x:Name="txt_row_id"  Visibility="Collapsed" ></TextBlock>
+
+                    <TextBlock  Margin="2,0,0,0"  Text="产品编号：" Foreground="#99FFFFFF" VerticalAlignment="Center" />
+
+
+                    <TextBox x:Name="txt_product_no"  Margin="2,0,0,0"  Background="#525252"  Foreground="White"  IsReadOnly="False" Width="120" Height="20"   VerticalAlignment="Center"></TextBox>
+                    <TextBlock   Margin="2,0,0,0" Foreground="White" Background="#525252" VerticalAlignment="Center" ></TextBlock>
+
+
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0" >
+
+
+                    <TextBlock Margin="2,0,0,0"  Text="产品位号：" Foreground="#99FFFFFF"  VerticalAlignment="Center" />
+
+
+                    <TextBox  x:Name="txt_product_Bitno" Margin="2,0,0,0"  Background="#525252"  Foreground="White"  IsReadOnly="False" Width="120" Height="20"   VerticalAlignment="Center"></TextBox>
+
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0" >
+
+
+                    <TextBlock Margin="2,0,0,0"  Text="产品型号：" Foreground="#99FFFFFF" VerticalAlignment="Center" />
+
+                    <TextBox   Visibility="Collapsed" Foreground="White" Background="#525252" VerticalAlignment="Center" ></TextBox>
+
+                    <TextBox x:Name="txt_model" Width="120"  Margin="2,0,0,0" Foreground="White" Background="#525252" VerticalAlignment="Center" ></TextBox>
+
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0" >
+
+
+                    <TextBlock Margin="2,0,0,0"  Text="产品规格：" Foreground="#99FFFFFF" VerticalAlignment="Center" />
+
+                    <TextBox   Visibility="Collapsed" Foreground="White" Background="#525252" VerticalAlignment="Center" ></TextBox>
+
+                    <TextBox x:Name="txt_spec" Width="120"  Margin="2,0,0,0" Foreground="White" Background="#525252" VerticalAlignment="Center" ></TextBox>
+
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+
+
+                    <TextBlock Margin="2,0,0,0"  Text="气体组别：" Foreground="#99FFFFFF" VerticalAlignment="Center" />
+
+                    <TextBox   Visibility="Collapsed" Foreground="White" Background="#525252" VerticalAlignment="Center" ></TextBox>
+                    <ComboBox DisplayMemberPath="GasGroup_Desc" SelectedValuePath="GasGroup_No"   x:Name="gas_group" IsEditable="True" Margin="2,0,0,0"   Foreground="White"  IsReadOnly="False" Width="120" Height="20" Style="{StaticResource DefaultComboBoxStyle}"  VerticalAlignment="Center"></ComboBox>
+                    <TextBlock   Margin="2,0,0,0" Foreground="White" Background="#525252" VerticalAlignment="Center" ></TextBlock>
+
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+
+
+                    <TextBlock Margin="2,0,0,0"  Text="试验标准：" Foreground="#99FFFFFF" VerticalAlignment="Center" />
+
+                    <TextBox   Visibility="Collapsed" Foreground="White" Background="#525252" VerticalAlignment="Center" ></TextBox>
+                    <ComboBox DisplayMemberPath="Teststandard_Desc" SelectedValuePath="Teststandard_No" x:Name="Test_standard"  IsEditable="True" Margin="2,0,0,0"   Foreground="White"  IsReadOnly="False" Width="120" Height="20" Style="{StaticResource DefaultComboBoxStyle}"  VerticalAlignment="Center"></ComboBox>
+                    <TextBlock   Margin="2,0,0,0" Foreground="White" Background="#525252" VerticalAlignment="Center" ></TextBlock>
+
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+
+
+                    <TextBlock Margin="2,0,0,0"  Text="备注：" Foreground="#99FFFFFF" VerticalAlignment="Center" />
+
+
+
+                    <TextBox x:Name="txt_mark" MaxLines="10" TextWrapping="Wrap" AcceptsReturn="True"  VerticalScrollBarVisibility="Auto"  Width="250"  Margin="2,0,0,0" Foreground="White" Background="#525252" VerticalAlignment="Center" ></TextBox>
+
+
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+
+
+
+
+
+
+                    <Button  Click="bt_ok"    Width="50" Height="20"  Margin="42,0,0,0" Foreground="White" Background="#525252" VerticalAlignment="Center" >OK</Button>
+                    <Button Click="bt_cancel"    Width="50" Height="20"  Margin="22,0,0,0" Foreground="White" Background="#525252" VerticalAlignment="Center" >Cancel</Button>
+                    <Button  Visibility="Collapsed"   Width="50" Height="20"  Margin="22,0,0,0" Foreground="White" Background="#525252" VerticalAlignment="Center" >更新</Button>
+
+
+                </StackPanel>
+
+
+
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>

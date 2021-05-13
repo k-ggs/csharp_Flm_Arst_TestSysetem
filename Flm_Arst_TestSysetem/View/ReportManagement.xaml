@@ -1,0 +1,264 @@
+﻿<UserControl x:Class="Flm_Arst_TestSysetem.View.ReportManagement"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Flm_Arst_TestSysetem.View" xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="750" d:DesignWidth="1200" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+     
+        <ControlTemplate TargetType="ToggleButton" x:Key="StateButtonTemplate">
+            <Border CornerRadius="3" Background="#EEE" Height="20" Width="50" Name="back">
+                <Grid>
+                    <TextBlock Text="打开" VerticalAlignment="Center" Margin="4,0" FontSize="9"/>
+                    <TextBlock Text="关闭" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="4,0" Foreground="White" FontSize="9"/>
+                    <Border Margin="2" HorizontalAlignment="Left" Width="23" Background="#DDD" CornerRadius="2">
+                        <TextBlock Text="||" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="8"/>
+                        <Border.RenderTransform>
+                            <TranslateTransform X="22" x:Name="tt"/>
+                        </Border.RenderTransform>
+                    </Border>
+                </Grid>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Duration="0:0:0.2" To="0" Storyboard.TargetName="tt" Storyboard.TargetProperty="X"/>
+                                <ColorAnimation Duration="0:0:0.2" To="#38baec" Storyboard.TargetName="back" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Duration="0:0:0.2" Storyboard.TargetName="tt" Storyboard.TargetProperty="X"/>
+                                <ColorAnimation Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate TargetType="ToggleButton" x:Key="WarningButtonTemplate">
+            <TextBlock Text="&#xe62e;" FontFamily="pack://application:,,,/Zhaoxi.Industrial;component/Assets/Fonts/#iconfont"
+                       Foreground="#FF3300" FontSize="18" VerticalAlignment="Center"
+                       Name="txt" Opacity="0"/>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Opacity" Value="1" TargetName="txt"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </UserControl.Resources>
+    <!--DataContext="{Binding Source={StaticResource smVM}}"-->
+    <Grid  x:Name="grid_systemMonitor">
+       
+        <Grid  Margin="20,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="0"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*"></RowDefinition>
+                <RowDefinition Height="0.9*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Visibility="Collapsed" Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" >
+                    <TextBlock Margin="15,0,0,0" Text="试验记录：" Foreground="#99FFFFFF" VerticalAlignment="Center"/>
+                    <DatePicker x:Name="Min_date" VerticalAlignment="Center"  SelectedDateFormat="Short"></DatePicker>
+                    <TextBlock VerticalAlignment="Center" Foreground="White">————</TextBlock>
+                    <DatePicker x:Name="Max_date" VerticalAlignment="Center"  SelectedDateFormat="Short"></DatePicker>
+                    <Button Margin="15,0,0,0"  Content="查询"   VerticalAlignment="Center" Click="bt_select"/>
+
+                    <TextBlock Margin="15,0,0,0" Text="产品编号:" Foreground="#99FFFFFF" VerticalAlignment="Center"/>
+                    <ComboBox x:Name="Com_TNMS" ItemsSource="{Binding}" Width="150" DisplayMemberPath="text" SelectedValuePath="idx" Margin="10" Style="{StaticResource DefaultComboBoxStyle}" >
+
+
+
+                    </ComboBox>
+
+                    <!--   <TextBlock Margin="15,0,0,0" Text="介质:" Foreground="#99FFFFFF" VerticalAlignment="Center"/>
+                <ComboBox x:Name="pro_media" ItemsSource="{Binding}" Width="150" DisplayMemberPath="text" SelectedValuePath="idx" Margin="10" Style="{StaticResource DefaultComboBoxStyle}" >
+
+
+
+                </ComboBox>-->
+
+
+                    <Button x:Name="Naget_chart" Margin="15,0,0,0"  Content="获取曲线" Click="get_chart"   VerticalAlignment="Center"/>
+                    <Button Margin="15,0,0,0"  Content="数据导出" Click="Button_Click"   VerticalAlignment="Center"/>
+
+
+
+                </StackPanel>
+               
+            </Grid>
+            <StackPanel  Grid.Row="0" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Top" >
+
+                <TextBlock   Foreground="White" FontSize="23">试验记录选择区</TextBlock>
+                <Button Height="20" Margin="15,0,0,0"   Content="刷新" Click="bt_ck"   />
+
+
+            </StackPanel>
+           
+            
+            <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,30,0,0">
+                <Border BorderBrush="AliceBlue" Margin="5" BorderThickness="3" CornerRadius="10">
+                    <DataGrid Name="dataGrid0"  ItemsSource="{Binding}"  AutoGenerateColumns="False" Loaded="dataGrid0_Loaded" PreviewMouseDoubleClick="dataGrid0_PreviewMouseDoubleClick" >
+                        <DataGrid.Columns  >
+                            <DataGridTextColumn Header="索引" Width="30" Binding="{Binding Row_id}"/>
+                            <DataGridTextColumn Header="产品编号" Width="80" Binding="{Binding Product_No}"/>
+                            <DataGridTextColumn Header="产品位号" Width="80" Binding="{Binding Product_BitNo}"/>
+                            <DataGridTextColumn Header="试验次数" Width="70" Binding="{Binding frequency}"/>
+                            <DataGridTextColumn Header="介质名称" Width="80" Binding="{Binding Media_name}"/>
+                            <DataGridTextColumn Header="可燃气体浓度" Width="90" Binding="{Binding CBTB_G_C}"/>
+                            <DataGridTextColumn Header="介质浓度" Width="90" Binding="{Binding Media_C}"/>
+                          
+                            <DataGridTextColumn Header="初始压力" Width="70" Binding="{Binding Initial_pressure}"/>
+                            <DataGridTextColumn Header="爆炸压力" Width="70" Binding="{Binding explosion_pressure}"/>
+                            <DataGridTextColumn Header="火焰速度" Width="70" Binding="{Binding Flame_V}"/>
+                            <DataGridTextColumn Header="平均压力" Width="70" Binding="{Binding Average_pressure}"/>
+
+                            <DataGridTextColumn Header="阻火结果" Width="100" Binding="{Binding Anti_Fire_flag}"/>
+                            <DataGridTextColumn Header="试验时间" Binding="{Binding Create_time}"/>
+                           
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                </Border>
+
+            </Grid>
+
+
+            <!--左侧设备详情-->
+            <Grid  Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0"/>
+                    <RowDefinition Height="0"/>
+                    <RowDefinition Height="0"/>
+                    <RowDefinition Height="0.6*"/>
+                    <RowDefinition Height="0.4*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="{Binding DeviceName}" Foreground="White" FontSize="14" Margin="0,15"/>
+                <ItemsControl Grid.Row="2" Visibility="Collapsed" ItemsSource="{Binding MonitorValueList}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="30"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding ValueName,StringFormat=\{0\}:}" Foreground="#99FFFFFF" VerticalAlignment="Center"/>
+                                <lvc:CartesianChart Grid.Column="1" MinHeight="30" DataTooltip="{x:Null}"  >
+                                    <lvc:CartesianChart.Series  >
+                                        <lvc:LineSeries Fill="Transparent" Values="{Binding Values}" PointGeometrySize="0" StrokeThickness="0.5">
+                                            <lvc:LineSeries.Stroke>
+                                                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                                                    <GradientStop Color="Orange" Offset="0.5"/>
+                                                    <GradientStop Color="#00FFFFFF" Offset="0"/>
+                                                    <GradientStop Color="#FFFFE2AE" Offset="0.1"/>
+                                                </LinearGradientBrush>
+                                            </lvc:LineSeries.Stroke>
+                                        </lvc:LineSeries>
+                                    </lvc:CartesianChart.Series>
+                                    <lvc:CartesianChart.AxisX>
+                                        <lvc:Axis ShowLabels="False" />
+                                    </lvc:CartesianChart.AxisX>
+                                    <lvc:CartesianChart.AxisY>
+                                        <lvc:Axis ShowLabels="False"/>
+                                    </lvc:CartesianChart.AxisY>
+                                </lvc:CartesianChart>
+                                <TextBlock Text="{Binding CurrentValue}" Grid.Column="2" Foreground="#99FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                                <TextBlock Text="{Binding Unit}" Grid.Column="3" Foreground="#99FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="3,0,0,0"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+              
+                <ToggleButton Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" 
+                              Template="{StaticResource WarningButtonTemplate}" Margin="0,0,15,0"
+                              IsEnabled="False"/>
+                <lvc:CartesianChart Name="H_Chart" Grid.Row="3" Series="{Binding H_seriesViews}"  LegendLocation="Right"    DisableAnimations="True"    Foreground="#FFCF2F2F" Zoom="Xy"  >
+                    <lvc:CartesianChart.AxisY>
+                        <lvc:Axis  LabelFormatter="{Binding YFormatter}" MaxValue="5" MinValue="-5"></lvc:Axis>
+                    </lvc:CartesianChart.AxisY>
+                    <!--<lvc:CartesianChart.AxisX>
+                        <lvc:Axis   MinValue="{Binding Min}"  >
+                            --><!--<lvc:Axis.Separator>
+                                <lvc:Separator Step="2" />
+                            </lvc:Axis.Separator>--><!--
+
+                        </lvc:Axis>
+
+                    </lvc:CartesianChart.AxisX>-->
+
+
+
+
+                </lvc:CartesianChart>
+                <lvc:CartesianChart Name="H_Chart_pressure" Grid.Row="4" Series="{Binding H_seriesViews_press}"  LegendLocation="Right"   DisableAnimations="True" Foreground="#FFCF2F2F" Zoom="Xy" >
+                    <lvc:CartesianChart.AxisY>
+                        <lvc:Axis  LabelFormatter="{Binding YFormatter}" MaxValue="5" MinValue="-5"></lvc:Axis>
+                    </lvc:CartesianChart.AxisY>
+                    <!--<lvc:CartesianChart.AxisX>
+                        <lvc:Axis   MinValue="{Binding Min}"  Labels="{ Binding x}" >
+                            --><!--<lvc:Axis.Separator>
+                                <lvc:Separator Step="2" />
+                            </lvc:Axis.Separator>--><!--
+
+                        </lvc:Axis>
+                    </lvc:CartesianChart.AxisX>-->
+                </lvc:CartesianChart>
+
+              
+            </Grid>
+
+            <Grid Grid.Column="1" Grid.Row="1" Margin="5,5,5,5"  >
+                
+                
+                <Border BorderBrush="AliceBlue" BorderThickness="3" CornerRadius="10">
+                    <DataGrid Name="dataGrid1"     ItemsSource="{Binding}"  AutoGenerateColumns="False" >
+                        <DataGrid.Columns  >
+                            <DataGridTextColumn Header="索引" Width="30"    Binding="{Binding idx}"/>
+                            <DataGridTextColumn Header="试验记录" Width="30"    Binding="{Binding Test_index}"/>
+                            <DataGridTextColumn Header="传感器1" Width="48" Binding="{Binding Fire_sensor1}"/>
+                            <DataGridTextColumn Header="传感器2" Width="48" Binding="{Binding Fire_sensor2}"/>
+                            <DataGridTextColumn Header="传感器3" Width="48" Binding="{Binding Fire_sensor3}"/>
+                            <DataGridTextColumn Header="传感器4" Width="48" Binding="{Binding Fire_sensor4}"/>
+                            <DataGridTextColumn Header="传感器5" Width="48" Binding="{Binding Fire_sensor5}"/>
+                            <DataGridTextColumn Header="传感器6" Width="48" Binding="{Binding Fire_sensor6}"/>
+
+
+                            <DataGridTextColumn Header="传感器7" Width="48" Binding="{Binding Fire_sensor7}"/>
+                            <DataGridTextColumn Header="传感器8" Width="48" Binding="{Binding Fire_sensor8}"/>
+
+                            <DataGridTextColumn Header="压力传感器1" Width="48"  Binding="{Binding P_sensor1}"/>
+                            <DataGridTextColumn Header="压力传感器2" Width="48" Binding="{Binding P_sensor2}"/>
+
+                            
+                            <DataGridTextColumn Header="介质" Visibility="Collapsed" Binding="{Binding media_name}"/>
+                            <DataGridTextColumn Header="采集频率/Hz"  Width="40" Binding="{Binding Clock_Rate}"/>
+                         
+                           
+                           
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

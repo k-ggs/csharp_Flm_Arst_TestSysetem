@@ -1,0 +1,27 @@
+﻿“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: DefaultDomain): 已加载“C:\WINDOWS\Microsoft.Net\assembly\GAC_32\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll”。
+“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: DefaultDomain): 已加载“f:\Users\GGS\source\repos\Flm_Arst_TestSysetem\Flm_Arst_TestSysetem\bin\Debug\Flm_Arst_TestSysetem.exe”。已加载符号。
+“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: Flm_Arst_TestSysetem.exe): 已加载“C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\PresentationFramework\v4.0_4.0.0.0__31bf3856ad364e35\PresentationFramework.dll”。
+“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: Flm_Arst_TestSysetem.exe): 已加载“C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\WindowsBase\v4.0_4.0.0.0__31bf3856ad364e35\WindowsBase.dll”。
+“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: Flm_Arst_TestSysetem.exe): 已加载“C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll”。
+“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: Flm_Arst_TestSysetem.exe): 已加载“C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll”。
+“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: Flm_Arst_TestSysetem.exe): 已加载“C:\WINDOWS\Microsoft.Net\assembly\GAC_32\PresentationCore\v4.0_4.0.0.0__31bf3856ad364e35\PresentationCore.dll”。
+“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: Flm_Arst_TestSysetem.exe): 已加载“C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xaml\v4.0_4.0.0.0__b77a5c561934e089\System.Xaml.dll”。
+“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: Flm_Arst_TestSysetem.exe): 已加载“C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\PrivateAssemblies\Runtime\Microsoft.VisualStudio.Debugger.Runtime.Desktop.dll”。
+“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: Flm_Arst_TestSysetem.exe): 已加载“C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll”。
+“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: Flm_Arst_TestSysetem.exe): 已加载“C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.dll”。
+“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: Flm_Arst_TestSysetem.exe): 已加载“C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\mscorlib.resources\v4.0_4.0.0.0_zh-Hans_b77a5c561934e089\mscorlib.resources.dll”。模块已生成，不包含符号。
+“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: Flm_Arst_TestSysetem.exe): 已加载“C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\PresentationFramework.Aero2\v4.0_4.0.0.0__31bf3856ad364e35\PresentationFramework.Aero2.dll”。
+“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: Flm_Arst_TestSysetem.exe): 已加载“C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\PresentationCore.resources\v4.0_4.0.0.0_zh-Hans_31bf3856ad364e35\PresentationCore.resources.dll”。模块已生成，不包含符号。
+“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: Flm_Arst_TestSysetem.exe): 已加载“C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\PresentationFramework-SystemXml\v4.0_4.0.0.0__b77a5c561934e089\PresentationFramework-SystemXml.dll”。
+“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: Flm_Arst_TestSysetem.exe): 已加载“c:\program files (x86)\microsoft visual studio\2019\community\common7\ide\commonextensions\microsoft\xamldiagnostics\Framework\x86\Microsoft.VisualStudio.DesignTools.WpfTap.dll”。
+“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: Flm_Arst_TestSysetem.exe): 已加载“C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Serialization\v4.0_4.0.0.0__b77a5c561934e089\System.Runtime.Serialization.dll”。
+“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: Flm_Arst_TestSysetem.exe): 已加载“C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\SMDiagnostics\v4.0_4.0.0.0__b77a5c561934e089\SMDiagnostics.dll”。
+“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: Flm_Arst_TestSysetem.exe): 已加载“C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.ServiceModel.Internals\v4.0_4.0.0.0__31bf3856ad364e35\System.ServiceModel.Internals.dll”。
+“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: Flm_Arst_TestSysetem.exe): 已加载“C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\UIAutomationTypes\v4.0_4.0.0.0__31bf3856ad364e35\UIAutomationTypes.dll”。
+“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: Flm_Arst_TestSysetem.exe): 已加载“C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\UIAutomationProvider\v4.0_4.0.0.0__31bf3856ad364e35\UIAutomationProvider.dll”。
+“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: Flm_Arst_TestSysetem.exe): 已加载“f:\Users\GGS\source\repos\Flm_Arst_TestSysetem\Flm_Arst_TestSysetem\bin\Debug\LiveCharts.dll”。已加载符号。
+“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: Flm_Arst_TestSysetem.exe): 已加载“C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Serialization.resources\v4.0_4.0.0.0_zh-Hans_b77a5c561934e089\System.Runtime.Serialization.resources.dll”。模块已生成，不包含符号。
+“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: Flm_Arst_TestSysetem.exe): 已加载“f:\Users\GGS\source\repos\Flm_Arst_TestSysetem\Flm_Arst_TestSysetem\bin\Debug\Zhaoxi.Controls.dll”。已加载符号。
+“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: Flm_Arst_TestSysetem.exe): 已加载“f:\Users\GGS\source\repos\Flm_Arst_TestSysetem\Flm_Arst_TestSysetem\bin\Debug\Zhaoxi.Communication.dll”。已加载符号。
+“Flm_Arst_TestSysetem.exe”(CLR v4.0.30319: Flm_Arst_TestSysetem.exe): 已加载“f:\Users\GGS\source\repos\Flm_Arst_TestSysetem\Flm_Arst_TestSysetem\bin\Debug\LiveCharts.Wpf.dll”。已加载符号。
+程序“[15524] Flm_Arst_TestSysetem.exe”已退出，返回值为 0 (0x0)。
